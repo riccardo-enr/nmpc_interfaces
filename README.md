@@ -3,7 +3,7 @@
 ## Description
 `nmpc_interfaces` is a package designed for Nonlinear Model Predictive Control (NMPC) applications. It provides message definitions for reference inputs necessary for NMPC algorithms, typically used in controlling unmanned aerial vehicles (UAVs).
 
-## Message Definition: `nmpc_ref`
+## Message Definition: `nmpc_interfaces/xref`
 
 This message contains the following fields:
 
@@ -36,14 +36,14 @@ $$
 Where:
 - \( x, y, z \): Position coordinates
 - \( v_x, v_y, v_z \): Linear velocities
-- \( qw, qx, qy, qz \): Quaternion components representing orientation
+- \( q_w, q_x, q_y, q_z \): Quaternion components representing orientation
 - \( p, q, r \): Angular velocities (roll, pitch, and yaw rates)
 
 ### Message organization
 
 ```mermaid
 graph LR
-    A[PoseStamped] --> B[x, y, z]
-    A[PoseStamped] --> C[qw, qx, qy, qz]
+    A[Pose] --> B[x, y, z]
+    A[Pose] --> C[qw, qx, qy, qz]
     D[Twist] --> E[vx, vy, vz]
     D[Twist] --> F[p, q, r]
