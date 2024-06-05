@@ -12,8 +12,13 @@ find_package(geometry_msgs REQUIRED)
 
 find_package(rosidl_default_generators REQUIRED)
 
-rosidl_generate_interfaces(${PROJECT_NAME}
+# set msg files
+set(msg_files
   "msg/Xref.msg"
+)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_files}
   DEPENDENCIES std_msgs geometry_msgs
 )
 
